@@ -2,7 +2,7 @@ import requests
 import time
 
 def take_posts(domain):
-    token = '78f912a078f912a078f912a0b17888d609778f978f912a0264c99734c52809618421fe4'
+    token = 'access_token'
     version = 5.103
     count = 100
     offset = 0
@@ -23,6 +23,9 @@ def take_posts(domain):
             print(data, domain)
             break
         all_posts.extend(data['response']['items'])
-        offset += count
+        if domain == 'jumoreski':
+            offset += 5000
+        else:
+            offset += count
         time.sleep(1)
     return all_posts

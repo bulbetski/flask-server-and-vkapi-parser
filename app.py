@@ -53,6 +53,8 @@ def filter_posts():
 
 # fp = filter_posts()
 db.create_all()
+# db.session.query(Post).delete()
+# db.session.commit()
 # for p in fp:
 #     db.session.add(p)
 # db.session.commit()
