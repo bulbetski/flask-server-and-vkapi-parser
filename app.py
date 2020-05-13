@@ -4,10 +4,10 @@ import sys
 from flask import Flask
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
-import sqlalchemy as sqla
+from sqlalchemy.dialects.mysql import insert
+from sqlalchemy.sql.expression import text
+from sqlalchemy import insert
 from config import Config
-
-# from pars import filter_posts
 import pars
 
 app = Flask(__name__)
@@ -53,8 +53,8 @@ def filter_posts():
 
 # fp = filter_posts()
 db.create_all()
-# for post in fp:
-#     db.session.add(post)
+# for p in fp:
+#     db.session.add(p)
 # db.session.commit()
 
 
